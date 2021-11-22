@@ -1,7 +1,7 @@
-#include "pch.h"
+//#include "pch.h"
 
 //#include "../gtest/gtest.h"
-
+#include <gtest.h>
 
 #include "tset.h"
 
@@ -299,3 +299,13 @@ TEST(TSet, check_negation_operator)
 
   EXPECT_EQ(expSet, set1);
 }
+
+TEST(TSet, can_create_set_with_positive_length) {
+    ASSERT_NO_THROW(TSet s(3));
+}
+
+TEST(TSet, throws_when_create_set_with_negative_length) {
+    ASSERT_ANY_THROW(TSet s(-3));
+}
+
+
